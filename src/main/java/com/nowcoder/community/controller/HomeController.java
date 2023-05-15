@@ -1,10 +1,10 @@
-package com.newcode.community.controller;
+package com.nowcoder.community.controller;
 
-import com.newcode.community.entity.DiscussPost;
-import com.newcode.community.entity.Page;
-import com.newcode.community.entity.User;
-import com.newcode.community.service.DiscussPostService;
-import com.newcode.community.service.UserService;
+import com.nowcoder.community.entity.DiscussPost;
+import com.nowcoder.community.entity.Page;
+import com.nowcoder.community.entity.User;
+import com.nowcoder.community.service.DiscussPostService;
+import com.nowcoder.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

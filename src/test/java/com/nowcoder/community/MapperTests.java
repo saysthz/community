@@ -1,9 +1,9 @@
-package com.newcode.community;
+package com.nowcoder.community;
 
-import com.newcode.community.dao.DiscussPostMapper;
-import com.newcode.community.dao.UserMapper;
-import com.newcode.community.entity.DiscussPost;
-import com.newcode.community.entity.User;
+import com.nowcoder.community.dao.DiscussPostMapper;
+import com.nowcoder.community.dao.UserMapper;
+import com.nowcoder.community.entity.DiscussPost;
+import com.nowcoder.community.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

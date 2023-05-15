@@ -1,6 +1,6 @@
-package com.newcode.community.dao;
+package com.nowcoder.community.dao;
 
-import com.newcode.community.entity.DiscussPost;
+import com.nowcoder.community.entity.DiscussPost;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

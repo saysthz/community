@@ -1,6 +1,6 @@
-package com.newcode.community.dao;
+package com.nowcoder.community.dao;
 
-import com.newcode.community.entity.User;
+import com.nowcoder.community.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

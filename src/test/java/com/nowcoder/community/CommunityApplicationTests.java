@@ -1,7 +1,5 @@
-package com.newcode.community;
+package com.nowcoder.community;
 
-import com.newcode.community.dao.AlphaDao;
-import com.newcode.community.service.AlphaService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.newcode.community.entity;
+package com.nowcoder.community.entity;
 
 /**
  * @author zmm
