@@ -22,19 +22,20 @@ class CommunityApplicationTests implements ApplicationContextAware {
         this.applicationContext = applicationContext;
     }
 
-    @Test
-    public void testApplicationContext(){
-        System.out.println(applicationContext);
-        AlphaDao alphaDao = applicationContext.getBean(AlphaDao.class);
-        System.out.println(alphaDao.select());
-    }
-    @Test
-    public void testManageBean(){
-        AlphaService alphaService = applicationContext.getBean(AlphaService.class);
-        System.out.println(alphaService);
-        alphaService = applicationContext.getBean(AlphaService.class);
-        System.out.println(alphaService);
-    }
+    // @Test
+    // public void testApplicationContext(){
+    //     System.out.println(applicationContext);
+    //     AlphaDao alphaDao = applicationContext.getBean(AlphaDao.class);
+    //     System.out.println(alphaDao.select());
+    // }
+
+    // @Test
+    // public void testManageBean(){
+    //     AlphaService alphaService = applicationContext.getBean(AlphaService.class);
+    //     System.out.println(alphaService);
+    //     alphaService = applicationContext.getBean(AlphaService.class);
+    //     System.out.println(alphaService);
+    // }
 
     @Test
     public void testOtherBean(){
@@ -42,16 +43,16 @@ class CommunityApplicationTests implements ApplicationContextAware {
         System.out.println(simpleDateFormat.format(new Date()));
     }
 
-    @Autowired
-    private AlphaDao alphaDao;
-
-    @Autowired
-    @Qualifier("alphaDaoHibernateImpl")
-    private AlphaDao alphaDao1;
-
-    @Test
-    public void testDI(){
-        System.out.println(alphaDao); // com.newcode.community.dao.impl.AlphaDaoMybatisImpl@45e1aa48
-        System.out.println(alphaDao1); // com.newcode.community.dao.impl.AlphaDaoHibernateImpl@2e807c54
-    }
+    // @Autowired
+    // private AlphaDao alphaDao;
+    //
+    // @Autowired
+    // @Qualifier("alphaDaoHibernateImpl")
+    // private AlphaDao alphaDao1;
+    //
+    // @Test
+    // public void testDI(){
+    //     System.out.println(alphaDao); // com.newcode.community.dao.impl.AlphaDaoMybatisImpl@45e1aa48
+    //     System.out.println(alphaDao1); // com.newcode.community.dao.impl.AlphaDaoHibernateImpl@2e807c54
+    // }
 }

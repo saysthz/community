@@ -1,6 +1,8 @@
 package com.nowcoder.community.service;
 
+import com.nowcoder.community.dao.LoginTicketMapper;
 import com.nowcoder.community.dao.UserMapper;
+import com.nowcoder.community.entity.LoginTicket;
 import com.nowcoder.community.entity.User;
 import com.nowcoder.community.util.CommunityConstUtil;
 import com.nowcoder.community.util.CommunityUtil;
@@ -14,6 +16,7 @@ import org.thymeleaf.context.Context;
 
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,6 +30,9 @@ import java.util.Random;
 public class UserService implements CommunityConstUtil {
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private LoginTicketMapper loginTicketMapper;
 
     @Autowired
     private MailClient mailClient;
@@ -118,5 +124,39 @@ public class UserService implements CommunityConstUtil {
             }
         }
     }
+
+    public Map<String, Object> login(String username, String password, int expiredSeconds) {
+        Map<String, Object> map = new HashMap<>();
+        if(StringUtil.isBlank(username)) {
+            map.put("usernameMsg", "用户名不能为空");
+            return map;
+        }
+        if(StringUtil.isBlank(password)) {
+            map.put("passwordMag", "密码不能为空");
+            return map;
+        }
+        User user = userMapper.selectByName(username);
+        if(user == null) {
+            map.put("usernameMsg", "用户不存在");
+            return map;
+        }
+        if(!CommunityUtil.md5(password + user.getSalt()).equals(user.getPassword())) {
+            map.put("passwordMsg", "密码不正确");
+            return map;
+        }
+
+        // 用户信息验证正确，生成登录凭证
+        LoginTicket loginTicket = new LoginTicket();
+        loginTicket.setUserId(user.getId());
+        loginTicket.setTicket(CommunityUtil.generateUUID());
+        loginTicket.setStatus(0);
+        loginTicket.setExpired(new Date(System.currentTimeMillis() + expiredSeconds * 1000));
+        loginTicketMapper.insertLoginTicket(loginTicket);
+
+        map.put("ticket", loginTicket.getTicket());
+
+        return map;
+    }
+
 
 }

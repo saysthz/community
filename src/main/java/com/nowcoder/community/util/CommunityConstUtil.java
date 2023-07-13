@@ -15,6 +15,11 @@ public interface CommunityConstUtil {
     //激活失败
     int ACTIVATION_FAIL = 2;
 
+    // 默认过期时长，12小时
+    int DEFAULT_EXPIRED_SECONDS = 60 * 60 * 12;
+
+    // 记住密码的过期时长，100天
+    int REMEMBER_EXPIRED_SECONDS = 60 * 60 * 24 * 3;
 
 
 
