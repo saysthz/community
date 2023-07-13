@@ -1,4 +1,4 @@
-package com.nowcoder.community.service.util;
+package com.nowcoder.community.util;
 
 /**
  * @author zmm

@@ -1,4 +1,4 @@
-package com.nowcoder.community.service.util;
+package com.nowcoder.community.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
