@@ -4,10 +4,10 @@ import com.nowcoder.community.dao.LoginTicketMapper;
 import com.nowcoder.community.dao.UserMapper;
 import com.nowcoder.community.entity.LoginTicket;
 import com.nowcoder.community.entity.User;
-import com.nowcoder.community.util.CommunityConstUtil;
-import com.nowcoder.community.util.CommunityUtil;
-import com.nowcoder.community.util.MailClient;
-import com.nowcoder.community.util.StringUtil;
+import com.nowcoder.community.service.util.CommunityConstUtil;
+import com.nowcoder.community.service.util.CommunityUtil;
+import com.nowcoder.community.service.util.MailClient;
+import com.nowcoder.community.service.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,6 @@ import org.thymeleaf.context.Context;
 
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
