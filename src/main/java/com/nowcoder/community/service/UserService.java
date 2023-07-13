@@ -16,7 +16,6 @@ import org.thymeleaf.context.Context;
 
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
