@@ -1,4 +1,4 @@
-package com.nowcoder.community.util;
+package com.nowcoder.community.service.util;
 
 import com.nowcoder.community.entity.LoginTicket;
 import org.springframework.stereotype.Component;
